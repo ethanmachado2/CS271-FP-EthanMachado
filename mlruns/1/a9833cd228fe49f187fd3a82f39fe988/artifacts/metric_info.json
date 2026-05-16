@@ -1,0 +1,4 @@
+{
+  "accuracy_score_X_test_tfidf": "accuracy_score(y_true=<Series>, y_pred=y_pred_tfidf)",
+  "f1_score_X_test_tfidf": "f1_score(y_true=<Series>, y_pred=y_pred_tfidf, average='macro')"
+}

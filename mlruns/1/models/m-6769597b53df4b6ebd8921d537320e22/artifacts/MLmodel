@@ -1,0 +1,30 @@
+artifact_path: /Users/ethanmachado/Documents/Education/Graduate School/Ethan/SJSU/Classes/S2026/CS271/Final
+  Project/Phases 3 and 4/mlruns/1/models/m-6769597b53df4b6ebd8921d537320e22/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.13
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+is_signature_from_type_hint: false
+mlflow_version: 3.11.1
+model_id: m-6769597b53df4b6ebd8921d537320e22
+model_size_bytes: 24735
+model_uuid: m-6769597b53df4b6ebd8921d537320e22
+prompts: null
+run_id: a9833cd228fe49f187fd3a82f39fe988
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1, 1000]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-05-02 23:33:28.467949'

@@ -1,0 +1,12 @@
+Model,Accuracy
+Majority class,0.6666666666666666
+Macro + Generic Sentiment,0.6296296296296297
+Macro + Sent + Growth Stance,0.6296296296296297
+Sent + Growth Stance only,0.6296296296296297
+RF (Macro+Sent+LLM Stance),0.6296296296296297
+Macro only,0.5925925925925926
+Macro + Growth Stance,0.5925925925925926
+Macro + LLM Stance,0.5925925925925926
+Macro + Sent + LLM Stance,0.5925925925925926
+Macro + Sent + All Stance,0.5925925925925926
+RF (Macro+Sent+Growth Stance),0.5925925925925926
