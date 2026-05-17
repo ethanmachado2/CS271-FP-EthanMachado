@@ -25,6 +25,22 @@ All experiments are tracked in MLflow (`CS271-RQ1-Stance` and `CS271-RQ2-Market`
 
 ---
 
+## Report & Diagrams
+
+| File | Description |
+|---|---|
+| [`CS271-ethan-machado-final-report.pdf`](CS271-ethan-machado-final-report.pdf) | Final research paper (IEEE format) — Abstract, Introduction, Related Work, Methodology, Experiments, Results, Conclusion |
+| [`CS271_FinalProject_EM_Bedrock.ipynb`](CS271_FinalProject_EM_Bedrock.ipynb) | Main notebook — all four phases, pre-computed outputs included |
+| [`CS271_FinalProject_EM_Bedrock.html`](CS271_FinalProject_EM_Bedrock.html) | Static HTML export of the notebook with rendered outputs |
+| [`CS271_FinalProject_EM_Bedrock.pdf`](CS271_FinalProject_EM_Bedrock.pdf) | PDF export of the notebook |
+| [`CS271-FP-Diagram-V2.drawio.png`](CS271-FP-Diagram-V2.drawio.png) | Pipeline summary diagram |
+
+### Pipeline Summary Diagram
+
+![Pipeline Summary Diagram](CS271-FP-Diagram-V2.drawio.png)
+
+---
+
 ## Results Summary
 
 ### RQ1 — Stance Classification (test n = 194, macro-F1)
@@ -73,47 +89,54 @@ Key finding: No feature set reliably beats the majority class baseline within bo
 ## Repository Structure
 
 ```
-Phases 3 and 4/
-├── CS271_FinalProject_EM_Bedrock.ipynb   # Main notebook (all phases)
+CS271-FP-EthanMachado/
+├── CS271-ethan-machado-final-report.pdf   # Final research paper (IEEE format)
+├── CS271_FinalProject_EM_Bedrock.ipynb    # Main notebook (all phases)
+├── CS271_FinalProject_EM_Bedrock.html     # Static HTML export of the notebook
+├── CS271_FinalProject_EM_Bedrock.pdf      # PDF export of the notebook
+│
+├── CS271-FP-Diagram-V2.drawio             # Pipeline diagram source
+├── CS271-FP-Diagram-V2.drawio.png         # Pipeline diagram export
+│
 ├── requirements.txt
 ├── .gitignore
 │
 ├── data/
 │   ├── raw/
-│   │   ├── FOMC.csv                      # Dated FOMC sentences (RQ2 corpus)
-│   │   └── manual-mm-split.csv           # Manually labeled stance corpus (RQ1)
+│   │   ├── FOMC.csv                       # Dated FOMC sentences (RQ2 corpus)
+│   │   └── manual-mm-split.csv            # Manually labeled stance corpus (RQ1)
 │   └── processed/
-│       ├── fomc_market_master.csv         # Merged FOMC + S&P 500 master dataset
+│       ├── fomc_market_master.csv          # Merged FOMC + S&P 500 master dataset
 │       ├── fomc_labeled_df.csv
-│       ├── split_train/val/test.csv       # RQ1 definitive splits
-│       ├── event_df.csv                   # Event-level features (stance + macro)
-│       ├── event_train/test.csv           # RQ2 temporal splits
+│       ├── split_train/val/test.csv        # RQ1 definitive splits
+│       ├── event_df.csv                    # Event-level features (stance + macro)
+│       ├── event_train/test.csv            # RQ2 temporal splits
 │       ├── master_ev_with_stance.csv
 │       ├── macro_cpi.csv / macro_unrate.csv
 │       ├── rq2_results_3d.csv
-│       ├── rq2_results_final_with_ci.csv  # Final RQ2 table with bootstrap CIs
-│       ├── robustness_a_horizon.csv       # 10-day horizon robustness
-│       ├── robustness_b_subperiod.csv     # Temporal sub-period robustness
-│       └── robustness_c_truncation.csv    # Input truncation robustness
+│       ├── rq2_results_final_with_ci.csv   # Final RQ2 table with bootstrap CIs
+│       ├── robustness_a_horizon.csv        # 10-day horizon robustness
+│       ├── robustness_b_subperiod.csv      # Temporal sub-period robustness
+│       └── robustness_c_truncation.csv     # Input truncation robustness
 │
-├── bert-uncased_results/                  # bert-base-uncased grid search outputs
-├── finbert_results/                       # ProsusAI/finbert grid search outputs
-├── distillbert_results/                   # distilbert-base-uncased grid search outputs
-├── finbert-fomc_results/                  # FinBERT-FOMC zero-shot predictions
+├── bert-uncased_results/                   # bert-base-uncased grid search outputs
+├── finbert_results/                        # ProsusAI/finbert grid search outputs
+├── distillbert_results/                    # distilbert-base-uncased grid search outputs
+├── finbert-fomc_results/                   # FinBERT-FOMC zero-shot predictions
 │
-├── bert-uncased_runs/                     # HuggingFace Trainer checkpoints
+├── bert-uncased_runs/                      # HuggingFace Trainer checkpoints
 ├── finbert_runs/
 ├── distilbert_runs/
 │
-├── llm_outputs/                           # LLM labeling checkpoints (per model/corpus)
+├── llm_outputs/                            # LLM labeling checkpoints (per model/corpus)
 │   ├── claude46-sonnet/
 │   ├── claude46-opus/
 │   ├── llama33-70b-br/
 │   ├── gpt-oss-120b-br/
 │   └── ...
 │
-├── mlflow.db                              # MLflow SQLite tracking store
-└── mlruns/                                # MLflow artifact store
+├── mlflow.db                               # MLflow SQLite tracking store
+└── mlruns/                                 # MLflow artifact store
 ```
 
 ---
